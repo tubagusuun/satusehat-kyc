@@ -21,7 +21,7 @@ Dokumentasi pembuatan library java SIMRS ICHA untuk integrasi SatuSehat Verifika
 ```java
 private static void sendKyc(String data) throws IOException {
 
-  // ini nanti dirubah ya... sesuai dengan token masing2. karena pasti exired, ini hanya ujicoba saja.
+  // ini nanti dirubah ya... sesuai dengan token masing2. karena pasti expired, ini hanya ujicoba saja.
   String access_token = "Adt9ioFlWQCHzSDidWpg4AnUbNki";
   
   String url = "https://api-satusehat.kemkes.go.id/kyc/v1/generate-url";
