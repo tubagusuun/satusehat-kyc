@@ -25,40 +25,8 @@ private static void sendKyc(String data) throws IOException {
   String access_token = "Adt9ioFlWQCHzSDidWpg4AnUbNki";
   
   String url = "https://api-satusehat.kemkes.go.id/kyc/v1/generate-url";
-  
-  
-  
-  URL obj = new URL(url);
-  HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-  con.setRequestMethod("POST");
-  con.setRequestProperty("Content-Type", "text/plain");
-  con.setRequestProperty("Authorization", "Bearer "+access_token);
 
-  con.setDoOutput(true);
-  OutputStream os = con.getOutputStream();
-  os.write(data.getBytes());
-  os.flush();
-  os.close();
-  // For POST only - END
-
-  int responseCode = con.getResponseCode();
-  System.out.println("POST Response Code :: " + responseCode);
-
-  if (responseCode == HttpURLConnection.HTTP_OK) { // success
-    BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-    String inputLine;
-    StringBuffer response = new StringBuffer();
-
-    while ((inputLine = in.readLine()) != null) {
-      response.append(inputLine);
-    }
-    in.close();
-
-    // print result
-    System.out.println(response.toString());
-  } else {
-    System.out.println("POST request did not work.");
-  }
+  ...
 }
 ```
 ## Playlist Tutorial
