@@ -44,6 +44,7 @@ class KycTest {
 				pathFile + "/rsa_public_satusehat.pub");
 	}
 
+
 	@Test
 	@Disabled
 	void kirim() throws EncrytionException, IOException {
@@ -58,7 +59,9 @@ class KycTest {
 		sendKyc(data);
 	}
 	
+	
 	@ParameterizedTest
+	// nanti ini ganti aja sesuai responsenya masing2
 	@ValueSource(strings = {"-----BEGIN ENCRYPTED MESSAGE-----"
 			+ "KTiZF9wUor8BwEi9oG4zLhC0w18LckQDgsJ1jPfsLQPzZDH0HQTkbO+iUJccNA5DR4"
 			+ "YaXzTQdvgO+jTEgEynxRzPrcmyyzjGcfelefi3mc4+rwNtZxy5gsOtz68RJBp4WEBe"
@@ -72,6 +75,7 @@ class KycTest {
 			+ "2bCADb7b1jOik5t2/Omsdtp+1SkFC4tfCYwIo7/s0="
 			+ "-----END ENCRYPTED MESSAGE-----"})
 //	@Disabled
+	// uncoment aja @Disabled-nya kalo mau ujicoba dekrypt
 	void terima(String input) throws DecryptionException {
 		System.out.println("terima :");
 		String data = kyc.decrypt(input);
@@ -81,6 +85,7 @@ class KycTest {
 	
 	private static void sendKyc(String data) throws IOException {
 		
+		// ini nanti dirubah ya... sesuai dengan token masing2. karena pasti exired, ini hanya ujicoba saja.
 		String access_token = "Adt9ioFlWQCHzSDidWpg4AnUbNki";
 		
 		String url = "https://api-satusehat.kemkes.go.id/kyc/v1/generate-url";
